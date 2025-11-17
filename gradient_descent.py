@@ -8,9 +8,9 @@ def gradient_descent(x, y):
 
     for iter in range(iterations):
         y_predicted = w_curr * x + b_curr
-        cost_function = (1 / m) * sum([val ** 2 for val in (y_predicted - y)])
-        wd = (2 / m) * sum((y_predicted - y) * x)
-        bd = (2 / m) * sum(y_predicted - y)
+        cost_function = (1 / m) * np.sum((y_predicted - y)**2)
+        wd = (2 / m) * np.sum((y_predicted - y) * x)
+        bd = (2 / m) * np.sum(y_predicted - y)
 
         w_curr = w_curr - learning_rate * wd
         b_curr = b_curr - learning_rate * bd
